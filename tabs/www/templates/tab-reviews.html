@@ -1,0 +1,25 @@
+<ion-view title="Reviews">
+  <ion-content>
+
+      <div class="item item-divider">
+          Dates
+      </div>
+
+      <ion-list>
+      <ion-item ng-repeat="review in reviews" type="item-text-wrap" href="#/tab/review/{{review.id}}">
+        {{review.name}}
+      </ion-item>
+    </ion-list>
+
+      <div class="item item-divider">
+          Activities
+      </div>
+
+      <ion-list>
+      <ion-item ng-repeat="activity in activities" type="item-text-wrap" href="#/tab/activity/{{activity.id}}">
+          {{activity.name}}
+      </ion-item>
+      </ion-list>
+
+  </ion-content>
+</ion-view>

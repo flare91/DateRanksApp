@@ -1,15 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+    .controller('HomeCtrl', function($scope) {
+    })
+
+    .controller('SearchCtrl', function($scope, Girls) {
+        $scope.girls = Girls.all();
+    })
+
+    .controller('RanksCtrl', function($scope) {
+    })
+
+.controller('ReviewsCtrl', function($scope, Reviews, Activities) {
+  $scope.reviews = Reviews.all();
+  $scope.activities = Activities.all();
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
+.controller('ReviewDetailCtrl', function($scope, $stateParams, Reviews, Activities) {
+  $scope.review = Reviews.get($stateParams.reviewId);
+  $scope.activities = Activities.get($stateParams.activityId);
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-.controller('AccountCtrl', function($scope) {
-});
+    .controller('ProfileCtrl', function($scope) {
+    });
