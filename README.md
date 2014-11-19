@@ -1,6 +1,8 @@
 DateRanksApp
 ============
 
+<p>I will try to commit something everday as of November 18th.</p>
+
 <div id="readme" class="boxed-group flush clearfix announce instapaper_body md">
     <h3>
       <span class="octicon octicon-book"></span>
