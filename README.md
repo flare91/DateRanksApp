@@ -10,7 +10,7 @@ DateRanksApp
     </h3>
 
     <article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
-<a id="user-content-dateranks" class="anchor" href="#dateranks" aria-hidden="true"><span class="octicon octicon-link"></span></a>DateRanks</h1>
+<h1><a id="user-content-dateranks" class="anchor" href="#dateranks" aria-hidden="true"><span class="octicon octicon-link"></span></a>DateRanks</h1>
 
 <p>Personal project for DGM 3790. (Fall 2014)</p>
 
