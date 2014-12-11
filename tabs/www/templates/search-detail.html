@@ -1,0 +1,38 @@
+<!--
+  This template loads for the 'tab.review-detail' state (app.js)
+  'activity' is a $scope variable created in the ReviewsCtrl controller (controllers.js)
+  The ReviewsCtrl pulls data from the Reviews service (service.js)
+  The Reviews service returns an array of review data
+-->
+<ion-view>
+    <ion-content has-header="true" padding="true">
+        <div ng-controller="SearchProfilesCtrl">
+
+
+            <h2>{{profileInfo.fullName}}</h2>
+            <img ng-src="{{profileInfo.image}}">
+            <p>Born: {{profileInfo.birthYear}} | Age: {{profileInfo.age}}</p>
+            <p>{{profileInfo.description}}</p>
+            <p>Number of reviews: {{profileInfo.reviews}}</p>
+
+            <div class="list card" id="show">
+
+                <div ng-controller="PreviousReviewCtrl">
+                    <div class="item item-avatar">
+                        <img ng-src="{{previousReview.image}}">
+                        <h2>{{previousReview.fullName}}</h2>
+                        <p>{{previousReview.dateOfReview}}</p>
+                    </div>
+
+                    <div class="item item-body">
+                        <p>
+                            {{previousReview.dateReviewDetails}}
+                        </p>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </ion-content>
+</ion-view>

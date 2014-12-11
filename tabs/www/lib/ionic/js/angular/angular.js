@@ -6218,7 +6218,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             }
           } catch (e) {
             // turns out that under some circumstances IE9 throws errors when one attempts to read
-            // comment's node value.
+            // comment.html's node value.
             // Just ignore it and continue. (Can't seem to reproduce in test case.)
           }
           break;
@@ -6668,8 +6668,8 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             }
 
             controllerInstance = $controller(controller, locals);
-            // For directives with element transclusion the element is a comment,
-            // but jQuery .data doesn't support attaching data to comment nodes as it's hard to
+            // For directives with element transclusion the element is a comment.html,
+            // but jQuery .data doesn't support attaching data to comment.html nodes as it's hard to
             // clean up (http://bugs.jquery.com/ticket/8335).
             // Instead, we save the controllers for the element in a local hash and attach to .data
             // later, once we have the actual element.
@@ -6752,7 +6752,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      *   * `E`: element name
      *   * `A': attribute
      *   * `C`: class
-     *   * `M`: comment
+     *   * `M`: comment.html
      * @returns {boolean} true if directive was added.
      */
     function addDirective(tDirectives, name, location, maxPriority, ignoreDirective, startAttrName,
@@ -13694,7 +13694,7 @@ function $SceDelegateProvider() {
  *   <div ng-controller="myAppController as myCtrl">
  *     <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
  *     <b>User comments</b><br>
- *     By default, HTML that isn't explicitly trusted (e.g. Alice's comment) is sanitized when
+ *     By default, HTML that isn't explicitly trusted (e.g. Alice's comment.html) is sanitized when
  *     $sanitize is available.  If $sanitize isn't available, this results in an error instead of an
  *     exploit.
  *     <div class="well">
@@ -15677,7 +15677,7 @@ var htmlAnchorDirective = valueFn({
         attr.$set('href', '');
       }
 
-      // add a comment node to anchors to workaround IE bug that causes element content to be reset
+      // add a comment.html node to anchors to workaround IE bug that causes element content to be reset
       // to new attribute content if attribute is updated with value containing @ and element also
       // contains value with @
       // see issue #1949

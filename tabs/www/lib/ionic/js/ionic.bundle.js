@@ -13843,7 +13843,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             }
           } catch (e) {
             // turns out that under some circumstances IE9 throws errors when one attempts to read
-            // comment's node value.
+            // comment.html's node value.
             // Just ignore it and continue. (Can't seem to reproduce in test case.)
           }
           break;
@@ -14293,8 +14293,8 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
             }
 
             controllerInstance = $controller(controller, locals);
-            // For directives with element transclusion the element is a comment,
-            // but jQuery .data doesn't support attaching data to comment nodes as it's hard to
+            // For directives with element transclusion the element is a comment.html,
+            // but jQuery .data doesn't support attaching data to comment.html nodes as it's hard to
             // clean up (http://bugs.jquery.com/ticket/8335).
             // Instead, we save the controllers for the element in a local hash and attach to .data
             // later, once we have the actual element.
@@ -14377,7 +14377,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
      *   * `E`: element name
      *   * `A': attribute
      *   * `C`: class
-     *   * `M`: comment
+     *   * `M`: comment.html
      * @returns {boolean} true if directive was added.
      */
     function addDirective(tDirectives, name, location, maxPriority, ignoreDirective, startAttrName,
@@ -21319,7 +21319,7 @@ function $SceDelegateProvider() {
  *   <div ng-controller="myAppController as myCtrl">
  *     <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
  *     <b>User comments</b><br>
- *     By default, HTML that isn't explicitly trusted (e.g. Alice's comment) is sanitized when
+ *     By default, HTML that isn't explicitly trusted (e.g. Alice's comment.html) is sanitized when
  *     $sanitize is available.  If $sanitize isn't available, this results in an error instead of an
  *     exploit.
  *     <div class="well">
@@ -23302,7 +23302,7 @@ var htmlAnchorDirective = valueFn({
         attr.$set('href', '');
       }
 
-      // add a comment node to anchors to workaround IE bug that causes element content to be reset
+      // add a comment.html node to anchors to workaround IE bug that causes element content to be reset
       // to new attribute content if attribute is updated with value containing @ and element also
       // contains value with @
       // see issue #1949
@@ -30053,7 +30053,7 @@ angular.module('ngAnimate', ['ng'])
       }
 
       function animationRunner(element, animationEvent, className) {
-        //transcluded directives may sometimes fire an animation using only comment nodes
+        //transcluded directives may sometimes fire an animation using only comment.html nodes
         //best to catch this early on to prevent any animation operations from occurring
         var node = element[0];
         if(!node) {
@@ -31098,7 +31098,7 @@ angular.module('ngAnimate', ['ng'])
         }
 
         if(appliedStyles.length > 0) {
-          //the element being animated may sometimes contain comment nodes in
+          //the element being animated may sometimes contain comment.html nodes in
           //the jqLite object, so we're safe to use a single variable to house
           //the styles since there is always only one element being animated
           var oldStyle = node.getAttribute('style') || '';
@@ -31386,7 +31386,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
  *     start: function(tag, attrs, unary) {},
  *     end: function(tag) {},
  *     chars: function(text) {},
- *     comment: function(text) {}
+ *     comment.html: function(text) {}
  * });
  *
  */
@@ -31583,7 +31583,7 @@ function makeMap(str) {
  *     start: function(tag, attrs, unary) {},
  *     end: function(tag) {},
  *     chars: function(text) {},
- *     comment: function(text) {}
+ *     comment.html: function(text) {}
  * });
  *
  * @param {string} html string
@@ -31609,7 +31609,7 @@ function htmlParser( html, handler ) {
 
       // Comment
       if ( html.indexOf("<!--") === 0 ) {
-        // comments containing -- are not allowed unless they terminate the comment
+        // comments containing -- are not allowed unless they terminate the comment.html
         index = html.indexOf("--", 4);
 
         if ( index >= 0 && html.lastIndexOf("-->", index) === index) {
@@ -31793,7 +31793,7 @@ function encodeEntities(value) {
  *     start: function(tag, attrs, unary) {},
  *     end: function(tag) {},
  *     chars: function(text) {},
- *     comment: function(text) {}
+ *     comment.html: function(text) {}
  * }
  */
 function htmlSanitizeWriter(buf, uriValidator){

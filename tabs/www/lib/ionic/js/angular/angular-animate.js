@@ -397,7 +397,7 @@ angular.module('ngAnimate', ['ng'])
       }
 
       function animationRunner(element, animationEvent, className) {
-        //transcluded directives may sometimes fire an animation using only comment nodes
+        //transcluded directives may sometimes fire an animation using only comment.html nodes
         //best to catch this early on to prevent any animation operations from occurring
         var node = element[0];
         if(!node) {
@@ -1442,7 +1442,7 @@ angular.module('ngAnimate', ['ng'])
         }
 
         if(appliedStyles.length > 0) {
-          //the element being animated may sometimes contain comment nodes in
+          //the element being animated may sometimes contain comment.html nodes in
           //the jqLite object, so we're safe to use a single variable to house
           //the styles since there is always only one element being animated
           var oldStyle = node.getAttribute('style') || '';

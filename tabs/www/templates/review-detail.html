@@ -1,10 +1,87 @@
-<!--
-  This template loads for the 'tab.review-detail' state (app.js)
-  'review' is a $scope variable created in the ReviewsCtrl controller (controllers.js)
-  The ReviewsCtrl pulls data from the Reviews service (service.js)
-  The Reviews service returns an array of review data
--->
 <ion-view title="{{review.name}}">
+    <style>
+        input {float: right;
+        }
+        select {margin-top: 15px;
+        float: left;}
+        .clear {clear:both;}
+        p {padding-top: 5%;}
+
+    </style>
   <ion-content has-header="true" padding="true">
+    <h1>Review</h1>
+      <label class="item item-input">
+          <span class="input-label">Feedback</span>
+          <input type="text">
+      </label>
+      <p>Pick top three qualities and rank from 0 to 100</p>
+<select ng-model="theirAttributes1">
+    <option>Flirty</option>
+    <option>Fun</option>
+    <option>Smart</option>
+    <option>Playful</option>
+    <option>Funny</option>
+    <option>Quiet</option>
+    <option>Conversationalist</option>
+    <option>Professional</option>
+    <option>Nice</option>
+    <option>Caring</option>
+    <option>Independent</option>
+    <option>Active</option>
+</select>
+      <input id="best1" type="range" name="volume" min="0" max="100" value="50">
+      <div class="clear"></div>
+      <select ng-model="theirAttributes2">
+          <option>Flirty</option>
+          <option>Fun</option>
+          <option>Smart</option>
+          <option>Playful</option>
+          <option>Funny</option>
+          <option>Quiet</option>
+          <option>Conversationalist</option>
+          <option>Professional</option>
+          <option>Nice</option>
+          <option>Caring</option>
+          <option>Independent</option>
+          <option>Active</option>
+      </select>
+
+      <input id="best2" type="range" name="volume" min="0" max="100" value="50">
+      <div class="clear"></div>
+      <select ng-model="theirAttributes3">
+          <option>Flirty</option>
+          <option>Fun</option>
+          <option>Smart</option>
+          <option>Playful</option>
+          <option>Funny</option>
+          <option>Quiet</option>
+          <option>Conversationalist</option>
+          <option>Professional</option>
+          <option>Nice</option>
+          <option>Caring</option>
+          <option>Independent</option>
+          <option>Active</option>
+      </select>
+
+      <input id="best3" type="range" name="volume" min="0" max="100" value="50">
+      <div class="clear"></div>
+
+      <p>What was the best part?</p>
+      <ion-radio ng-model="choice" ng-value="'A'">The Conversations</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'B'">The Activity(ies)</ion-radio>
+      <ion-radio ng-model="choice" ng-value="'C'">Other</ion-radio>
+
+      <p>Interested in another date?</p>
+      <ion-toggle toggle-class="toggle-calm">Yes</ion-toggle>
+
+      <p>Would you like feedback from your date?</p>
+      <ion-checkbox ng-model="isChecked">Yes</ion-checkbox>
+<br/>
+      <button class="button button-block button-positive" ng-controller="PopupReviewCtrl" ng-click="showConfirm()">
+          Submit
+      </button>
+
+      <div class="clear"></div>
+
   </ion-content>
 </ion-view>

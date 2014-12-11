@@ -7,7 +7,8 @@
 
       <ion-list>
       <ion-item ng-repeat="review in reviews" type="item-text-wrap" href="#/tab/review/{{review.id}}">
-        {{review.name}}
+        <img src="{{review.imageUrl}}"/>
+          {{review.name}}
       </ion-item>
     </ion-list>
 
@@ -15,8 +16,8 @@
           Activities
       </div>
 
-      <ion-list>
-      <ion-item ng-repeat="activity in activities" type="item-text-wrap" href="#/tab/activity/{{activity.id}}">
+      <ion-list ng-controller="ActivityReviewPopup">
+      <ion-item ng-repeat="activity in activities" type="item-text-wrap" ng-click="show()">
           {{activity.name}}
       </ion-item>
       </ion-list>

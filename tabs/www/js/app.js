@@ -58,6 +58,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 }
             })
 
+            .state('tab.search-detail', {
+                url: '/search/:searchId',
+                views: {
+                    'tab-search': {
+                        templateUrl: 'templates/search-detail.html'
+                    }
+                }
+            })
+
             .state('tab.ranks', {
                 url: '/ranks',
                 views: {

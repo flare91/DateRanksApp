@@ -1,0 +1,20 @@
+
+    {
+        "id":0,
+        "fullName":"Stephanie Brown",
+        "birthYear":"1990",
+        "hairColor":"Blonde",
+        "eyeColor":"Blue",
+        "age": 24,
+        "reviews":16,
+        "height":"5'4",
+        "image":"img/profile/girl1_03.jpg",
+        "topRanks":"Flirty, Fun, Nice",
+        "images":{
+            "image1":"img/profile/girl1_01.jpg",
+            "image2":"img/profile/girl1_02.jpg",
+            "image3":"img/profile/girl1_04.jpg",
+            "image4":"img/profile/girl1_05.jpg"
+        },
+        "description":"I love to play basketball and go bowling! I recently graduated from BYU and am looking for a new job. I come from a small family and am the youngest. I volunteer at the local nursery because I love being with kids!"
+    }
