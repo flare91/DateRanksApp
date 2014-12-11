@@ -1,17 +1,20 @@
 <ion-view title="Search">
     <style>
-        h1 {float: right;}
+        h1 {
+            float: right;
+        }
     </style>
     <ion-content>
 
         <div class="item item-divider">
-            Search: <input ng-model="query">
+            Search:
+            <input ng-model="query">
         </div>
 
         <ion-list>
             <ion-item ng-repeat="girl in girls | filter:query" type="item-text-wrap" href="#/tab/search/{{girl.name}}">
-                <img ng-src="{{girl.imageUrl}}">
-                {{girl.name}} <h1>{{girl.averageScore}}</h1>
+                <img ng-src="{{girl.imageUrl}}"> {{girl.name}}
+                <h1>{{girl.averageScore}}</h1>
                 <p>{{girl.topRanks}}</p>
             </ion-item>
         </ion-list>
